@@ -10,7 +10,9 @@
 	$conn = mysql_connect("localhost","root","");
 	mysql_select_db("news_aggregator");
 
-	$sql	=	"SELECT ID_ARTIKEL,JUDUL from artikel WHERE ID_ARTIKEL NOT IN (SELECT ID_ARTIKEL from artikel_kategori_verified)";
+	$start = 0;
+	$end	=	100;
+	$sql	=	"SELECT ID_ARTIKEL,JUDUL from artikel WHERE ID_ARTIKEL NOT IN (SELECT ID_ARTIKEL from artikel_kategori_verified) AND (ID_ARTIKEL <= $end) AND (ID_ARTIKEL >= $start)";
 	$hasil	=	mysql_query($sql);
 	while($hasil_eksekusi = mysql_fetch_array($hasil)) {
 		# code...
