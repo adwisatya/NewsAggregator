@@ -13,12 +13,13 @@
 
 
 	/* Bagian iterasi */
-	$start = 10001;
-	$end	=	17837;
+	$start = 0;
+	$end	=	1001;
 	for($id=$start;$id<=$end;$id++){
-		$query	=	mysql_query("SELECT FULL_TEXT FROM artikel WHERE ID_ARTIKEL='$id'");
+		$query	=	mysql_query("SELECT JUDUL,FULL_TEXT FROM artikel WHERE ID_ARTIKEL='$id'");
 		$hasil_eksekusi = mysql_fetch_array($query);
-		updateBerita($id,trimTandaBaca($hasil_eksekusi['FULL_TEXT']));
+		updateBerita($id,"FULL_TEXT",trimTandaBaca($hasil_eksekusi['FULL_TEXT']));
+		updateBerita($id,"JUDUL",trimTandaBaca($hasil_eksekusi['JUDUL']));
 	}
 
 	print "Record ke-$start hingga ke-$end sudah dibersihkan";

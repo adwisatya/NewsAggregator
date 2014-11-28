@@ -6,6 +6,7 @@
 # author: a.dwisaty4@yahoo.com
 ##################################################################
 	set_time_limit(0);
+	require_once("function.php");
 
 	$conn = mysql_connect("localhost","root","");
 	mysql_select_db("news_aggregator");
@@ -17,13 +18,16 @@
 
 	$hasil	=	mysql_query($sql);
 	
-	echo "@relation weather.symbolic<br>";
-	echo "@attribute text String<br>";
+	echo "@relation Berita<br>";
+	echo "@attribute text string<br>";
 	echo "@attribute label {'Pendidikan', 'Kriminal', 'Politik', 'Hukum dan Kriminal', 'Sosial Budaya', 'Olahraga', 'Teknologi dan Sains', 'Pertanian', 'Hiburan', 'Bisnis dan Ekonomi', 'Ekonomi', 'Kesehatan', 'Internasional', 'Bencana dan Kecelakaan', 'Investigasi dan Persidangan'}<br>";
 	echo "@data<br>";
 	while($hasil_eksekusi = mysql_fetch_array($hasil)) {
 		# code...
-		echo "\"".$hasil_eksekusi['JUDUL']." ".$hasil_eksekusi['FULL_TEXT']."\",".$hasil_eksekusi['LABEL'];
+		echo "'";
+		echo trimTandaBaca(trimTandaBaca($hasil_eksekusi['JUDUL']))." ".trimTandaBaca(trimTandaBaca($hasil_eksekusi['FULL_TEXT']));
+		echo "'";
+		echo ",?";
 		echo "<br>";
 	}
 ?>

@@ -1,7 +1,7 @@
 <?php
 /* Menghilangkant anda baca */
 function trimTandaBaca($input){
-	$tandaBaca = array(",","'",".","/","?","\"","/","\\","-",":","(",")","  ");
+	$tandaBaca = array("`","\”","{","}","”","“",'”',",","'",".","/","?","\"","/","\\","-",":","(",")","  ");
 	foreach ($tandaBaca as $key) {
 		$input	=	str_replace($key, " ", $input);
 	}
@@ -9,9 +9,9 @@ function trimTandaBaca($input){
 }
 
 /* update berita */
-function updateBerita($id,$konten){
+function updateBerita($id,$kolom,$konten){
 	$sql = "UPDATE artikel ".
-	       "SET FULL_TEXT = '$konten' ".
+	       "SET $kolom = '$konten' ".
 	       "WHERE ID_ARTIKEL = $id" ;
 	$retval = mysql_query($sql);
 }
