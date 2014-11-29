@@ -1,0 +1,47 @@
+#tubuh{
+	margin-bottom:35px;
+}
+#right-side-profile{
+	float:left;
+}
+
+#shared-post-wrapper{
+	text-align:left;
+}
+.shared-material-unit{
+	margin-bottom:15px;
+}
+.gambar-smu{
+	float:left;
+	margin-right:10px;
+}
+.paragraf-materimine{
+	text-align:justify;
+}
+#profile-wrapper{
+	text-align: left;
+}
+#tombol-profile-wrapper{
+	margin-right: 20px;
+	width: 250px;
+}
+#tombol-profile-wrapper:hover{
+	background-color: red;
+}
+#tombol-profile{
+	float:left;
+}
+#tombol-profile:hover{
+	background-color: red;
+}
+#tombol-materiline{
+	float:left;
+	margin-left: 20px;
+}
+#tombol-materiline:hover{
+	background-color: red;
+}
+#profile-name{
+	text-align:right;
+	margin-right:15px;
+}
