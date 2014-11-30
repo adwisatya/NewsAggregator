@@ -9,6 +9,7 @@ package gui;
 /**
  *
  * @author adwisatya
+ * Bagian ini tolong diganti jadi engine yang Zaky buat. Buat static aja biar enggak perlu new.
  */
 public class engine {
 	public static String getLabel(String input){

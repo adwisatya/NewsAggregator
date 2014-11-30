@@ -53,6 +53,7 @@ public class FileUploadHandler extends HttpServlet {
             }          
          
         }else{
+			//Bagian ini yang bakal nanganin input form selain upload file.COntoh dibawah ini adalah ngasih hasil klasifikasi teks "sdasdsa" terus diparsing ke index.jsp
             request.setAttribute("message", engine.getLabel("sdasdsa"));
         }
     

@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Public Hall of Material</title>
+    <title>MYTA News Aggregator</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -73,6 +73,8 @@
 		  <div id="result-container">
 			  <div id="result-set">
 				  <%
+					//bagian ini yang nanti bakal nampilin hasil klasifikasi.
+					//hasil klasifikasi diparsing dari FileUploadHandler lewat request attribut message
 					if(request.getAttribute("message") != null){
 						out.println(request.getAttribute("message"));
 					}  
