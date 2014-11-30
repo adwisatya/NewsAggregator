@@ -54,7 +54,10 @@ public class engine {
 		Document doc;
 		try{
 			doc = Jsoup.connect(link).get();
-			konten = doc.title();
+			//konten = doc.title();
+			Document document = Jsoup.parse(doc.html());
+			//Elements elements = document.select("div.info.demo");
+			konten = document.text();
 		}catch(IOException e){
 			e.printStackTrace();
 		}
