@@ -61,7 +61,7 @@
 			<hr/>
 			<div id="form-container-new">
 			<center>
-				<form action="upload.jsp" method="POST" enctype="multipart/form-data" role="form">
+				<form action="upload" method="POST" enctype="multipart/form-data" role="form">
 					<div class="form-group">
 					<label for="textInput"></label>
 					<input type="text" class="form-control" id="textInput" name="textInput" placeholder="text di sini">
