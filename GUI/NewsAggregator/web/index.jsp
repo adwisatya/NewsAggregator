@@ -57,25 +57,26 @@
 
     <div class="container">
 		<div class="starter-template" id="editable-starter-template">
-			<h3> silahkan masukkan berita anda </h3>
+			<h3> Selamat datang di MYTA News Aggregator </h3>
 			<hr/>
 			<div id="form-container-new">
 			<center>
-				<form action="upload" method="POST" enctype="multipart/form-data" role="form">
-					<div class="form-group">
-					<label for="textInput"></label>
-					<input type="text" class="form-control" id="textInput" name="textInput" placeholder="text di sini">
-				  </div>
-				  <div class="form-group">
-					<input type="file" id="fileSelect" name="file">
-				  </div>
-					<button type="submit" class="btn btn-default" name="submit">Submit</button>
-				</form>
+					<label><input type="radio" name="newsInput" value="single" onclick="singleClicked();">Single News</label>
+					<label><input type="radio" name="newsInput" value="multi" onclick="multiClicked();">Multi News</label>
+					<label><input type="radio" name="newsInput" value="multi" onclick="linkClicked();">Link News</label>
+
+				<div id="inputForm">
+					 
+				</div>
 			</center>
 			</div>
 		  <div id="result-container">
-			  <div class="result-set">
-				  &nbsp;
+			  <div id="result-set">
+				  <%
+					if(request.getAttribute("message") != null){
+						out.println(request.getAttribute("message"));
+					}  
+				  %>
 			  </div>
 		  </div>
 		</div>

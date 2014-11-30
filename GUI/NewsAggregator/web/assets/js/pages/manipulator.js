@@ -16,3 +16,17 @@ function clickContact(){
 function clickSNK(){
 	document.getElementById("editable-starter-template").innerHTML="<h1>SYARAT DAN KETENTUAN</h1><h3>Dalam menggunakan Public Hall of Material, pengguna tidak dipungut biaya dan bersedia memenuhi ketentuan berikut:</h2><ol style=\"text-align:left\"><li>Pengguna memberikan informasi asli mengenai data diri</li><li>Pengguna menghindarkan diri dari tindakan provokasi</li><li>Pengguna tidak membagikan informasi pribadi seperti username dan password kepada orang lain</li></ol>";
 }
+function singleClicked(){
+	document.getElementById("inputForm").innerHTML="<form id=\"form-input\" action=\"upload\" method=\"POST\" role=\"form\"><div class=\"form-group\"><label for=\"textInput\"></label><input type=\"text\" class=\"form-control\" id=\"textInput\" name=\"textInput\" placeholder=\"text di sini\"></div><button type=\"submit\" class=\"btn btn-default\" name=\"submit\" onclick=\"\">Submit</button></form>";
+	document.getElementById("result-set").innerHTML="";
+}
+function multiClicked(){
+	document.getElementById("inputForm").innerHTML="<form id=\"form-input\" action=\"upload\" method=\"POST\" role=\"form\" enctype=\"multipart/form-data\"><div class=\"form-group\"><input type=\"file\" id=\"fileSelect\" name=\"file\"></div><button type=\"submit\" class=\"btn btn-default\" name=\"submit\" onclick=\"\">Submit</button></form>";
+	document.getElementById("result-set").innerHTML="";
+
+}
+function linkClicked(){
+	document.getElementById("inputForm").innerHTML="<form id=\"form-input\" action=\"upload\" method=\"POST\" role=\"form\"><div class=\"form-group\"><label for=\"textInput\"></label><input type=\"text\" class=\"form-control\" id=\"linkInput\" name=\"linkInput\" placeholder=\"link di sini\"></div><button type=\"submit\" class=\"btn btn-default\" name=\"submit\" onclick=\"\">Submit</button></form>";
+	document.getElementById("result-set").innerHTML="";
+
+}

@@ -10,6 +10,7 @@
  *
  * @author adwisatya
  */
+import gui.engine;
  import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -52,11 +53,10 @@ public class FileUploadHandler extends HttpServlet {
             }          
          
         }else{
-            request.setAttribute("message",
-                                 "Sorry this Servlet only handles file upload request");
+            request.setAttribute("message", engine.getLabel("sdasdsa"));
         }
     
-        request.getRequestDispatcher("/result.jsp").forward(request, response);
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
      
     }
   

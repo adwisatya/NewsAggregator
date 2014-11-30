@@ -14,4 +14,7 @@ public class engine {
 	public static String getLabel(String input){
 		return "Pendidikan";
 	}
+	public static String checkMulti(String namafile){
+		return "xxx";
+	}
 }
