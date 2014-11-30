@@ -14,16 +14,20 @@ function clickSNK(){
 	document.getElementById("editable-starter-template").innerHTML="<h1>SYARAT DAN KETENTUAN</h1><h3>Dalam menggunakan MYTA News Aggregator, pengguna tidak dipungut biaya.</li></ol>";
 }
 function singleClicked(){
-	document.getElementById("inputForm").innerHTML="<form id=\"form-input\" action=\"upload\" method=\"POST\" role=\"form\"><div class=\"form-group\"><label for=\"textInput\"></label><input type=\"text\" class=\"form-control\" id=\"textInput\" name=\"textInput\" placeholder=\"text di sini\"></div><button type=\"submit\" class=\"btn btn-default\" name=\"submit\" onclick=\"\">Submit</button></form>";
+	document.getElementById("inputForm").innerHTML="<form id=\"form-input\" action=\"upload\" method=\"POST\" role=\"form\"><label><input type=\"radio\" name=\"newsInput\" value=\"single\" onclick=\"singleClicked();\">Single News</label><label><input type=\"radio\" name=\"newsInput\" value=\"multi\" onclick=\"multiClicked();\">Multi News</label><label><input type=\"radio\" name=\"newsInput\" value=\"link\" onclick=\"linkClicked();\">Link News</label></label><input type=\"text\" class=\"form-control\" id=\"textInput\" name=\"textInput\" placeholder=\"text di sini\"><button type=\"submit\" class=\"btn btn-default\" name=\"submit\" onclick=\"\">Submit</button></form>";
 	document.getElementById("result-set").innerHTML="";
 }
 function multiClicked(){
-	document.getElementById("inputForm").innerHTML="<form id=\"form-input\" action=\"upload\" method=\"POST\" role=\"form\" enctype=\"multipart/form-data\"><div class=\"form-group\"><input type=\"file\" id=\"fileSelect\" name=\"file\"></div><button type=\"submit\" class=\"btn btn-default\" name=\"submit\" onclick=\"\">Submit</button></form>";
+	document.getElementById("inputForm").innerHTML="<form id=\"form-input\" action=\"upload\" method=\"POST\" role=\"form\" enctype=\"multipart/form-data\"><label><input type=\"radio\" name=\"newsInput\" value=\"single\" onclick=\"singleClicked();\">Single News</label><label><input type=\"radio\" name=\"newsInput\" value=\"multi\" onclick=\"multiClicked();\">Multi News</label><label><input type=\"radio\" name=\"newsInput\" value=\"link\" onclick=\"linkClicked();\">Link News</label><div class=\"form-group\"><input type=\"file\" id=\"fileSelect\" name=\"file\"><button type=\"submit\" class=\"btn btn-default\" name=\"submit\" onclick=\"\">Submit</button></form>";
 	document.getElementById("result-set").innerHTML="";
 
 }
 function linkClicked(){
-	document.getElementById("inputForm").innerHTML="<form id=\"form-input\" action=\"upload\" method=\"POST\" role=\"form\"><div class=\"form-group\"><label for=\"textInput\"></label><input type=\"text\" class=\"form-control\" id=\"linkInput\" name=\"linkInput\" placeholder=\"link di sini\"></div><button type=\"submit\" class=\"btn btn-default\" name=\"submit\" onclick=\"\">Submit</button></form>";
+	document.getElementById("inputForm").innerHTML="<form id=\"form-input\" action=\"upload\" method=\"POST\" role=\"form\"><label><input type=\"radio\" name=\"newsInput\" value=\"single\" onclick=\"singleClicked();\">Single News</label><label><input type=\"radio\" name=\"newsInput\" value=\"multi\" onclick=\"multiClicked();\">Multi News</label><label><input type=\"radio\" name=\"newsInput\" value=\"link\" onclick=\"linkClicked();\">Link News</label></label><input type=\"text\" class=\"form-control\" id=\"linkInput\" name=\"linkInput\" placeholder=\"link di sini\"><button type=\"submit\" class=\"btn btn-default\" name=\"submit\" onclick=\"\">Submit</button></form>";
 	document.getElementById("result-set").innerHTML="";
 
+}
+
+function cekFile(){
+	document.getElementById("form-input").removeAttribute("enctype");
 }

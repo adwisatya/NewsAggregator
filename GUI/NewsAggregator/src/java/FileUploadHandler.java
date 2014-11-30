@@ -32,7 +32,8 @@ public class FileUploadHandler extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      
+		HttpServletRequest tmpReq;
+		tmpReq = request;
         //process only if its multipart content
         if(ServletFileUpload.isMultipartContent(request)){
             try {
@@ -54,11 +55,11 @@ public class FileUploadHandler extends HttpServlet {
          
         }else{
 			//Bagian ini yang bakal nanganin input form selain upload file.COntoh dibawah ini adalah ngasih hasil klasifikasi teks "sdasdsa" terus diparsing ke index.jsp
-            request.setAttribute("message", engine.getLabel("sdasdsa"));
+            //request.setAttribute("message", tmpReq.getParameter("textInput"));
+			request.setAttribute("message",engine.getKonten(tmpReq.getParameter("textInput")));
         }
     
         request.getRequestDispatcher("/index.jsp").forward(request, response);
-     
     }
   
 }

@@ -61,12 +61,12 @@
 			<hr/>
 			<div id="form-container-new">
 			<center>
-					<label><input type="radio" name="newsInput" value="single" onclick="singleClicked();">Single News</label>
-					<label><input type="radio" name="newsInput" value="multi" onclick="multiClicked();">Multi News</label>
-					<label><input type="radio" name="newsInput" value="multi" onclick="linkClicked();">Link News</label>
-
-				<div id="inputForm">
-					 
+				<div class="form-group">
+					 <form id="form-input" action="upload" method="POST" role="form" enctype="multipart/form-data">
+							<input type="text" class="form-control" id="textInput" name="textInput" placeholder="text/link di sini"><br/>
+							<input type="file" id="fileSelect" name="file"><br/>
+							<button type="submit" class="btn btn-default" name="submit" onclick="cekFile();">Submit</button>
+					 </form>
 				</div>
 			</center>
 			</div>
