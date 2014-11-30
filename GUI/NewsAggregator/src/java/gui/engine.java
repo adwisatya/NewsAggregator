@@ -33,11 +33,57 @@ public class engine {
 		}else if (link.contains("okezone.com/")){
 			//getKontenOkezone(String link);
 		}else{
-			//
+			text =  getTitleAnything(link);
 		}
 		return text;
 	}
+	public static String getKontenTempo(String link){
+		String konten = null;
+		Document doc;
+		try{
+			doc = Jsoup.connect(link).get();
+			konten = doc.title();
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return konten;
+	}
+	
 	public static String getKontenMetro(String link){
+		String konten = null;
+		Document doc;
+		try{
+			doc = Jsoup.connect(link).get();
+			konten = doc.title();
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return konten;
+	}
+	public static String getKontenRepublika(String link){
+		String konten = null;
+		Document doc;
+		try{
+			doc = Jsoup.connect(link).get();
+			konten = doc.title();
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return konten;
+	}
+	public static String getKontenOkezone(String link){
+		String konten = null;
+		Document doc;
+		try{
+			doc = Jsoup.connect(link).get();
+			konten = doc.title();
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return konten;
+	}
+	public static String getTitleAnything(String link){
+		// selain sumber berita yang ada di database cuma bakal diambil title nya.
 		String konten = null;
 		Document doc;
 		try{
