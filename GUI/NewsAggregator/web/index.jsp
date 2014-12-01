@@ -66,7 +66,13 @@
 			<div id="form-container-new">
 			<center>
 				<div class="form-group" id="form-group-edit">
-					<form id="form-input" action="upload" method="POST" role="form"><input type="text" class="form-control" id="textInput" name="textInput" placeholder="judul di sini"><br/><textarea class="form-control" id="textInput" name="textInputKonten"></textarea><br/><input type="hidden" name="islink" value="nol"><button type="submit" class="btn btn-default" name="submit" onclick="">Submit</button></form>
+					<form id="form-input" action="upload" method="POST" role="form">
+						<input type="hidden" name="update" value="nol">
+						<input type="text" class="form-control" id="textInput" name="textInput" placeholder="judul di sini"><br/>
+						<textarea placeholder="Konten berita" row="20" class="form-control" id="textInput" name="textInputKonten"></textarea><br/>
+						<input type="hidden" name="islink" value="nol">
+						<button type="submit" class="btn btn-default" name="submit" onclick="">Submit</button>
+					</form>
 				</div>
 			</center>
 			</div>
@@ -102,13 +108,13 @@
 		document.getElementById("form-group-edit").innerHTML="<h1>SYARAT DAN KETENTUAN</h1><h3>Dalam menggunakan MYTA News Aggregator, pengguna tidak dipungut biaya.</li></ol>";
 	}
 	function clickSingle(){
-		document.getElementById("form-group-edit").innerHTML="<form id=\"form-input\" action=\"upload\" method=\"POST\" role=\"form\"><input type=\"text\" class=\"form-control\" id=\"textInput\" name=\"textInput\" placeholder=\"judul di sini\"><br/><textarea class=\"form-control\" id=\"textInput\" name=\"textInputKonten\"></textarea><br/><input type=\"hidden\" name=\"islink\" value=\"nol\"><button type=\"submit\" class=\"btn btn-default\" name=\"submit\" onclick=\"\">Submit</button></form>";
+		document.getElementById("form-group-edit").innerHTML="<form id=\"form-input\" action=\"upload\" method=\"POST\" role=\"form\"><input type=\"hidden\" name=\"update\" value=\"nol\"><input type=\"text\" class=\"form-control\" id=\"textInput\" name=\"textInput\" placeholder=\"judul di sini\"><br/><textarea class=\"form-control\" id=\"textInput\" name=\"textInputKonten\"></textarea><br/><input type=\"hidden\" name=\"islink\" value=\"nol\"><button type=\"submit\" class=\"btn btn-default\" name=\"submit\" onclick=\"\">Submit</button></form>";
 	}
 	function clickMulti(){
-		document.getElementById("form-group-edit").innerHTML="<form id=\"form-input\" action=\"upload\" method=\"POST\" role=\"form\" enctype=\"multipart/form-data\"><input type=\"file\" id=\"fileSelect\" name=\"file\"><br/><button type=\"submit\" class=\"btn btn-default\" name=\"submit\" onclick=\"\">Submit</button></form>";
+		document.getElementById("form-group-edit").innerHTML="<form id=\"form-input\" action=\"upload\" method=\"POST\" role=\"form\" enctype=\"multipart/form-data\"><input type=\"hidden\" name=\"update\" value=\"nol\"><input type=\"file\" id=\"fileSelect\" name=\"file\"><br/><button type=\"submit\" class=\"btn btn-default\" name=\"submit\" onclick=\"\">Submit</button></form>";
 	}
 	function clickLink(){
-		document.getElementById("form-group-edit").innerHTML="<form id=\"form-input\" action=\"upload\" method=\"POST\" role=\"form\"><input type=\"text\" class=\"form-control\" id=\"textInput\" name=\"textInput\" placeholder=\"link di sini\"><br/><input type=\"hidden\" name=\"islink\" value=\"satu\"><button type=\"submit\" class=\"btn btn-default\" name=\"submit\" onclick=\"\">Submit</button></form>";
+		document.getElementById("form-group-edit").innerHTML="<form id=\"form-input\" action=\"upload\" method=\"POST\" role=\"form\"><input type=\"hidden\" name=\"update\" value=\"nol\"><input type=\"text\" class=\"form-control\" id=\"textInput\" name=\"textInput\" placeholder=\"link di sini\"><br/><input type=\"hidden\" name=\"islink\" value=\"satu\"><button type=\"submit\" class=\"btn btn-default\" name=\"submit\" onclick=\"\">Submit</button></form>";
 	}
 	</script>
   </body>

@@ -65,15 +65,51 @@
 			<hr/>
 		  <div id="result-container">
 			  <div class="form-group" id="form-group-edit" style="text-align:center">
-				<div id="result-set" style="text-align:center">
-					<%
-					  //bagian ini yang nanti bakal nampilin hasil klasifikasi.
-					  //hasil klasifikasi diparsing dari FileUploadHandler lewat request attribut message
-					  if(request.getAttribute("message") != null){
-						  out.println(request.getAttribute("message"));
-					  }  
-					%>
+				<div id="form-group-salah">
+					<h3><% if(request.getAttribute("judul") != null){ out.println(request.getAttribute("judul"));} %></h3><br/>
+					<p width="400px">
+						<% if(request.getAttribute("konten") != null){ out.println(request.getAttribute("konten"));} %>
+					</p>
+					 <form method="POST" action="upload">
+						 <input type="hidden" name="islink" value="nol">
+						 <input type="hidden" name="update" value="satu">
+						 <input type="hidden" name="judul" value="<% if(request.getAttribute("judul") != null){ out.println(request.getAttribute("judul"));} %>"><br/>
+						 <input type="hidden" name="konten" value="<% if(request.getAttribute("konten") != null){ out.println(request.getAttribute("konten"));} %>"><br/>
+						 <br/>
+							<div id="result-set" style="text-align:center">
+								Diklasifikasikan sebagai: <br/>
+								<%
+								  //bagian ini yang nanti bakal nampilin hasil klasifikasi.
+								  //hasil klasifikasi diparsing dari FileUploadHandler lewat request attribut message
+								  if(request.getAttribute("message") != null){
+									  out.println(request.getAttribute("message"));
+								  }  
+								%>
+							</div>
+						 <br/>
+						 Salah?
+						 </br>
+						 <select name="labelBenar">
+							<option value="Pendidikan">Pendidikan</option>
+							<option value="Kriminal">Kriminal</option>
+							<option value="Politik">Politik</option>
+							<option value="Hukum dan Kriminal">Hukum dan Kriminal</option>
+							<option value="Sosial Budaya">Sosial Budaya</option>
+							<option value="Olahraga">Olahraga</option>
+							<option value="Teknologi dan Sains">Teknologi dan Sains</option>
+							<option value="Pertanian">Pertanian</option>
+							<option value="Hiburan">Hiburan</option>
+							<option value="Ekonomi">Ekonomi</option>
+							<option value="Bisnis dan Ekonomi">Bisnis dan Ekonomi</option>
+							<option value="Kesehatan">Kesehatan</option>
+							<option value="Bencana dan Kecelakaan">Bencana dan Kecelakaan</option>
+							<option value="Internasional">Internasional</option>
+							<option value="Investigasi dan Persidangan">Investigasi dan Persidangan</option>
+						</select>
+						 <input type="submit" value="Update Label">
+					 </form>
 				</div>
+
 			  </div>
 		  </div>
 		</div>
@@ -105,6 +141,9 @@
 	}
 	function clickLink(){
 		document.getElementById("form-group-edit").innerHTML="<form id=\"form-input\" action=\"upload\" method=\"POST\" role=\"form\"><center><input type=\"text\" class=\"form-control\" id=\"textInput\" name=\"textInput\" placeholder=\"link di sini\"><br/><input type=\"hidden\" name=\"islink\" value=\"satu\"><button type=\"submit\" class=\"btn btn-default\" name=\"submit\" onclick=\"\">Submit</button></center></form>";
+	}
+	function clickSalah(){
+		ducoment.getElementById("form-group-salah")
 	}
 	</script>
   </body>
