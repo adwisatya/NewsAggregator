@@ -31,7 +31,7 @@ public class engine {
 		}else if(link.contains("republika.co.id/")){
 			//getKontenRepublika(String link);
 		}else if (link.contains("okezone.com/")){
-			//getKontenOkezone(String link);
+			text = getKontenOkezone(link);
 		}else{
 			text =  getTitleAnything(link);
 		}
@@ -57,6 +57,7 @@ public class engine {
 			//konten = doc.title();
 			Document document = Jsoup.parse(doc.html());
 			//Elements elements = document.select("div.info.demo");
+			//Element element =  document.select("div.info").first();
 			konten = document.text();
 		}catch(IOException e){
 			e.printStackTrace();
@@ -78,23 +79,21 @@ public class engine {
 		String konten = null;
 		Document doc;
 		try{
-			doc = Jsoup.connect(link).get();
-			konten = doc.title();
-		}catch(IOException e){
+			//doc = Jsoup.connect(link).get();
+			//Elements elements =  doc.select(".col-md-9");
+			//konten = doc.text();
+			String html = Jsoup.connect(link).get().html();
+			//String html = "<div class=\"col-md-9 p-nol\">fdoo</div>";
+			Document document = Jsoup.parse(html);
+			Elements elements = document.select("div.col-md-9.p-nol");
+			konten =  elements.text();
+		}catch(Exception e){
 			e.printStackTrace();
 		}
 		return konten;
 	}
 	public static String getTitleAnything(String link){
 		// selain sumber berita yang ada di database cuma bakal diambil title nya.
-		String konten = null;
-		Document doc;
-		try{
-			doc = Jsoup.connect(link).get();
-			konten = doc.title();
-		}catch(IOException e){
-			e.printStackTrace();
-		}
-		return konten;
+		return "aDssdasdsa";
 	}
 }
